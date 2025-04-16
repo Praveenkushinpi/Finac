@@ -1,6 +1,11 @@
 import {ReactNode} from 'react';
 import {Link, useLocation} from 'react-router-dom';
-import { Home, PieChart,ListChecks, Settings } from 'lucide-react';
+import Myicon from '/assets/images/home.svg';
+import Myicon from '/assets/images/settings-sliders.svg';
+import Myicon from '/assets/images/stats.svg';
+import Myicon from '/assets/images/menu-burger.svg';
+import Myicon from '/assets/images/bank.svg';
+
 
 interface LayoutProps {
     children: ReactNode;
@@ -23,27 +28,27 @@ const Layout = ({ children }: LayoutProps) => {
         <div className="container max-w-md-auto">
             <div className="flex justify-around">
                 <Link to="/" className={`flex flex-col items-center ${isActive('/') ? 'text-primary' : 'text-muted-foreground'}`}>
-                    <Home className="w-6 h-6" />
+                    <img src={Myicon} alt="home" className="w-6 h-6" />
                     <span className="text-sm">Home</span>
-        </Link>
+                </Link>
         <Link to="/expenses" className={`flex flex-col items-center ${isActive('/expenses') ? 'text-primary' : 'text-muted-foreground'}`}>
-              <ListChecks size={24} />
+            <img src={Myicon} alt="stats" className="w-6 h-6" />
               <span className="text-xs mt-1">Expenses</span>
             </Link>
             <Link to="/analytics" className={`flex flex-col items-center ${isActive('/analytics') ? 'text-primary' : 'text-muted-foreground'}`}>
-              <PieChart size={24} />
+           <img src={Myicon} alt="menu-burger" className="w-6 h-6" />
               <span className="text-xs mt-1">Analytics</span>
             </Link>
             <Link to="/settings" className={`flex flex-col items-center ${isActive('/settings') ? 'text-primary' : 'text-muted-foreground'}`}>
-              <Settings size={24} />
+              <img src={Myicon} alt="settings-sliders" className="w-6 h-6" />
               <span className="text-xs mt-1">Settings</span>   
         </Link>
         <Link to="/profile" className={`flex flex-col items-centre ${isActive(`/profile`) ? 'text-primary' : 'text-muted-foreground'}`}>
-         <Settings size={24} />
+         <img src={Myicon} alt="bank" />
          <span className="text-xs mt-1">Profile</span>
          </Link>
             </div>
-            </div>
+        </div>
             </nav>
             </div>
           
